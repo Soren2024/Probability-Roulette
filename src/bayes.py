@@ -20,4 +20,14 @@ class bayes:
         self.B = number
         self.E = fake
         self.S = shoot
-    
+        
+    def binomial_dist(B, p, S):
+        """
+        Calculate the binomial distribution probability.
+        Args:
+            :param B: total number of tests
+            :param p: probability of success per trial
+            :param S: indicates the number of successful attempts
+            :return: binomial distribution probability
+        """
+        return np.math.comb(B, S) * p**S * (1-p)**(B-S)
