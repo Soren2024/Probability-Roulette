@@ -42,3 +42,8 @@ def bayes(B, E, S):
 
     normalizing_constant, _ = quad(lambda x: binomial_dist(B+E, x, B) * binomial_dist(B, x, S) * posterior_distribution(x, B, E, S), 0, 1)
     return binomial_dist(B+E, 1/(1+S/(B-E)), B) * posterior_distribution(1/(1+S/(B-E)), B, E, S) / normalizing_constant
+
+import maths.bayes
+
+def main() -> int:
+    
